@@ -2,16 +2,18 @@
 django-popular
 ==============
 
+**django-popular is highly experimental and not recommended for general use**
+
 A simple interface to use Google Analytics data to determine things like
 most popular blog posts.  By associating a model with a `Google Analytics
-compatible regex_` and an optional lookup function, it is possible to
+compatible regex`_ and an optional lookup function, it is possible to
 find the most popular instances of the registered model.
 
 The current requirement to write an additional regex and function is
 acknowledged as sub-optimal, alternatives are welcome, though the limitations
 of the Google Analytics API make reusing the regex from the urlconf impossible.
 
-.. _http://www.google.com/support/analytics/bin/answer.py?answer=55582
+.. _`Google Analytics compatible regex`: http://www.google.com/support/analytics/bin/answer.py?answer=55582
 
 Installation
 ============
