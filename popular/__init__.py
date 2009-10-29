@@ -1,6 +1,6 @@
 import datetime
 from django.conf import settings
-from django.core.urlresolvers import resolve, Resolver404
+from django.core.urlresolvers import resolve
 from googleanalytics import Connection
 from googleanalytics.exception import GoogleAnalyticsClientError
 
@@ -71,10 +71,9 @@ def get_popular_items(model, num=5, days_ago=7,
         objects = []
         for item in data:
             try:
-                url = item.dimension.split('?')[0]
-                obj = lookup_func(url)
+                obj = lookup_func(item.dimension)
                 objects.append((obj, item.metric))
-            except (model.DoesNotExist, Resolver404):
+            except model.DoesNotExist:
                 pass
         return objects
     except GoogleAnalyticsClientError:
