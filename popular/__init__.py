@@ -4,6 +4,8 @@ from django.core.urlresolvers import resolve, Resolver404
 from googleanalytics import Connection
 from googleanalytics.exception import GoogleAnalyticsClientError
 
+__VERSION__ = '0.0.2'
+
 registered_models = {}
 
 _ga_acct = None

@@ -4,7 +4,7 @@ long_description = open('README.rst').read()
 
 setup(
     name='django-popular',
-    version="0.0.1",
+    version="0.0.2",
     package_dir={'popular': 'popular'},
     packages=['popular'],
     description='Experimental Django library for finding popular objects based on google analytics views',
