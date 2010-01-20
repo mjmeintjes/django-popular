@@ -13,7 +13,8 @@ class ItemsNode(template.Node):
 
     def render(self, context):
         items = get_popular_items(self.model, self.num_items, self.num_days)
-        context[self.context_var] = [x[0] for x in items]
+        if items:
+            context[self.context_var] = [x[0] for x in items]
         return ''
 
 @register.tag
